@@ -19,6 +19,37 @@ Ionic module for caching resources, works for any HTML tag, use storage and file
   <video cacheSrc="http://sample-videos.com/video/mp4/240/big_buck_bunny_240p_2mb.mp4"></video>
   ```
 
+## [Installation](#installation)
+- First you have to install the module through npm:
+
+```shell
+$ npm install --save ionic-cache-src
+```
+
+- Afterwards, you need to import the `IonicCacheSrcModule` in your module:
+
+```ts
+import { NgModule } from '@angular/core';
+import { IonicStorageModule } from '@ionic/storage';
+import { IonicCacheSrcModule } from 'ionic-cache-src';
+ 
+@NgModule({
+    imports: [
+        ...
+        IonicStorageModule.forRoot(),
+        IonicCacheSrcModule
+    ]
+})
+export class YourModule {};
+```
+
+**Note:** _IonicCacheSrcModule_ depends on `IonicStorageModule` and the following cordova plugins:
+
+```shell
+$ ionic cordova plugin add cordova-plugin-file
+$ ionic cordova plugin add cordova-plugin-file-transfer
+```
+
 ## [Advanced Usage](#advanced-usage)
 
 - Your typescript file. Use `get` or `getAll` methods to fetch resources. (Note: Just first time, resource is downloaded and saved in filesystem)
@@ -57,37 +88,6 @@ Ionic module for caching resources, works for any HTML tag, use storage and file
     ```html
     <img *ngFor="let path of paths" [cacheSrc]="path"/>
     ```
-
-## [Installation](#installation)
-- First you have to install the module through npm:
-
-```shell
-$ npm install --save ionic-cache-src
-```
-
-- Afterwards, you need to import the `IonicCacheSrcModule` in your module:
-
-```ts
-import { NgModule } from '@angular/core';
-import { IonicStorageModule } from '@ionic/storage';
-import { IonicCacheSrcModule } from 'ionic-cache-src';
- 
-@NgModule({
-    imports: [
-        ...
-        IonicStorageModule.forRoot(),
-        IonicCacheSrcModule
-    ]
-})
-export class YourModule {};
-```
-
-**Note:** _IonicCacheSrcModule_ depends on `IonicStorageModule` and the following cordova plugins:
-
-```shell
-$ ionic cordova plugin add cordova-plugin-file
-$ ionic cordova plugin add cordova-plugin-file-transfer
-```
 
 ## Instance Members
 
@@ -133,7 +133,7 @@ For iOS add <preference name="iosPersistentFileLocation" value="Library"/>
 
 ## Contribution
 - **Having an issue**? or looking for support? [Open an issue](https://github.com/borisgastelu/ionic-cache-src/issues/new) and we will get you the help you need.
-- Got a **new feature or a bug fix**? Fork the repo, make your changes, and submit a pull request.
+<!--- Got a **new feature or a bug fix**? Fork the repo, make your changes, and submit a pull request.-->
 
 ## Support this project
 If you find this project useful, please star the repo to let people know that it's reliable. Also, share it with friends and colleagues that might find this useful as well. Thank you :smile:
