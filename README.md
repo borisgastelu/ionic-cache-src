@@ -1,6 +1,7 @@
 # ionic-cache-src
 
 Ionic module for caching resources, works for any HTML tag, use storage and filesystem.
+[https://www.npmjs.com/package/ionic-cache-src](https://www.npmjs.com/package/ionic-cache-src)
 
 ## [Basic Usage](#basic-usage)
 
