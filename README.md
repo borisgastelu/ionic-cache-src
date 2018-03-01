@@ -34,18 +34,15 @@ Ionic module for caching resources, works for any HTML tag, use storage and file
     export class HomePage {
     
         let paths: string[] = [];
-    
+
         constructor(private _cacheSrv: CacheSrcService) {
-            this.cacheImages();
-        }
-    
-        cacheImages() {
             let images = [
                 'http://sample-videos.com/img/Sample-png-image-500kb.png'
                 'http://sample-videos.com/img/Sample-png-image-1mb.png'
                 'http://sample-videos.com/img/Sample-jpg-image-500kb.jpg'
             ];
-            
+
+            // Use get() for one resource
             this._cacheSrv.getAll(images)
                 .subscribe(cacheItems => {
                     this.paths = cacheItems.map(item => item.path);
@@ -92,8 +89,35 @@ $ ionic cordova plugin add cordova-plugin-file
 $ ionic cordova plugin add cordova-plugin-file-transfer
 ```
 
-This module works in device with Ionic Framework (v >= 2.0), the supported platforms being:
+## Instance Members
 
+### - get(url)
+
+Param | Type | Description
+--- | --- | ---
+`url` | string | URL of the server to download the file, as encoded by encodeURI().
+
+- Return `Observable<CacheItem>`
+
+### - getAll(urls)
+
+Param | Type | Description
+--- | --- | ---
+`urls` | string[] | List of URLs of the server to download the file, as encoded by encodeURI().
+
+- Return `Observable<CacheItem[]>` 
+
+### _CacheItem_
+
+Param | Type | Description
+--- | --- | ---
+`url` | string | URL from where it was downloaded.
+`key` | string | Name of the saved file.
+`path` | string | File path of the saved resource.
+`status` | string | Shows "incomplete" while resource is downloading, "complete" once it is saved.
+
+## Supported Platforms
+This module works with Ionic Framework (v >= 2.0), the supported platforms being:
 - Android
 - iOS
 
