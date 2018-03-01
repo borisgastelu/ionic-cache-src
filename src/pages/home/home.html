@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            Cache Source
+            Ionic Cache Src
         </ion-title>
     </ion-navbar>
 
@@ -24,8 +24,6 @@
         </div>
 
         <div *ngSwitchCase="'videos'">
-            <!-- TODO: investigar porque no ejecuta video cuando cambia valor con el tag "source" -->
-            <!-- <source [cacheSrc]="video" type="video/mp4"> -->
             <video *ngFor="let video of videos" [cacheSrc]="video" controls autoplay></video>
         </div>
     </div>
