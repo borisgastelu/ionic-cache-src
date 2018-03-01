@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Cache Source
+        </ion-title>
+    </ion-navbar>
+
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="segment">
+            <ion-segment-button value="images">
+                Images
+            </ion-segment-button>
+            <ion-segment-button value="videos">
+                Videos
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div [ngSwitch]="segment">
+        <div *ngSwitchCase="'images'">
+            <img *ngFor="let image of images" [cacheSrc]="image"/>
+        </div>
+
+        <div *ngSwitchCase="'videos'">
+            <!-- TODO: investigar porque no ejecuta video cuando cambia valor con el tag "source" -->
+            <!-- <source [cacheSrc]="video" type="video/mp4"> -->
+            <video *ngFor="let video of videos" [cacheSrc]="video" controls autoplay></video>
+        </div>
+    </div>
+</ion-content>

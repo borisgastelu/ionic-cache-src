@@ -1,6 +1,6 @@
 {
-    "name": "ionic-cache-src",
-    "version": "0.0.39",
+    "name": "ionic-cache-src_sample",
+    "version": "0.0.1",
     "author": "Boris Gastelú",
     "description": "Ionic module for caching resources, works for any HTML tag, use storage and filesystem.",
     "homepage": "https://github.com/borisgastelu/ionic-cache-src",
@@ -39,7 +39,7 @@
         "cordova-plugin-splashscreen": "^5.0.2",
         "cordova-plugin-whitelist": "^1.3.3",
         "ionic-angular": "3.9.2",
-        "ionic-cache-src": "0.0.36",
+        "ionic-cache-src": "0.0.39",
         "ionicons": "3.0.0",
         "rxjs": "5.5.2",
         "sw-toolbox": "3.6.0",
