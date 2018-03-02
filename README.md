@@ -1,14 +1,13 @@
 # ionic-cache-src
 
-Ionic module for caching resources, works for any HTML tag, use storage and filesystem. Uses [Ionic Storage](https://ionicframework.com/docs/storage/) so it support IndexedDB, SQLite (Cordova), WebSQL
+Ionic module for caching resources, works for any HTML tag, use storage and filesystem. Uses [Ionic Storage](https://ionicframework.com/docs/storage/) so it supports IndexedDB, SQLite (Cordova), WebSQL
 
 <!--[![NPM](https://nodei.co/npm/ionic-cache-src.png?stars&downloads)](https://nodei.co/npm/ionic-cache-src/)-->
 <!--[![NPM](https://nodei.co/npm-dl/ionic-cache-src.png?months=3&height=1)](https://nodei.co/npm/ionic-cache-src/)-->
 
 ## [Basic Usage](#basic-usage)
 
-- As Directive (html)
-  Change `src` to `cacheSrc`
+- As Directive (html) change `src` to `cacheSrc`
 
   ```html
   <img cacheSrc="http://sample-videos.com/img/Sample-png-image-1mb.png"/>
@@ -19,12 +18,18 @@ Ionic module for caching resources, works for any HTML tag, use storage and file
   ```
 
   ```html
-  <video cacheSrc="http://sample-videos.com/video/mp4/240/big_buck_bunny_240p_2mb.mp4"></video>
+  <video cacheSrc="http://sample-videos.com/video/mp4/240/big_buck_bunny_240p_1mb.mp4"></video>
   ```
+  
+- You can use a preload image while the resource is downloading. It works for any tag. By default it uses a predefined image.
 
+  ```html
+  <img [cacheSrc]="IMAGE_URL" [preImage]="PRELOAD_IMAGE_PATH" />
+  ```
+  
 ## [Installation](#installation)
 
-[Via NPM](https://www.npmjs.com/package/ionic-cache-src)
+Via [NPM](https://www.npmjs.com/package/ionic-cache-src)
 ```shell
 $ npm install --save ionic-cache-src @ionic/storage --save
 ```
@@ -113,7 +118,7 @@ Param | Type | Description
 --- | --- | ---
 `url` | string | URL of the server to download the file, as encoded by encodeURI().
 
-- Return `Observable<CacheItem>`
+- Return **Observable<[CacheItem](#cacheitem)>**
 
 ### - cacheAll(urls)
 
@@ -121,9 +126,28 @@ Param | Type | Description
 --- | --- | ---
 `urls` | string[] | List of URLs of the server to download the file, as encoded by encodeURI().
 
-- Return `Observable<CacheItem[]>` 
+- Return **Observable<[CacheItem](#cacheitem)[]>**
 
-### _CacheItem_
+### - find(url)
+
+Param | Type | Description
+--- | --- | ---
+`url` | string | URL of the server to download the file, as encoded by encodeURI().
+
+- Return **Observable<[CacheItem](#cacheitem)>**
+
+### - remove(url)
+
+Param | Type | Description
+--- | --- | ---
+`url` | string | URL of the server to download the file, as encoded by encodeURI().
+
+- Return **Observable<[CacheItem](#cacheitem)>**
+
+### - clear()
+- Return **Observable<[CacheItem](#cacheitem)[]>**
+
+### [_CacheItem_](#cacheitem)
 
 Param | Type | Description
 --- | --- | ---

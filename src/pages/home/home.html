@@ -3,6 +3,10 @@
         <ion-title>
             Ionic Cache Src
         </ion-title>
+
+        <ion-buttons end>
+            <button ion-button clear (click)="clear()">Clear</button>
+        </ion-buttons>
     </ion-navbar>
 
     <ion-toolbar>
@@ -20,11 +24,11 @@
 <ion-content>
     <div [ngSwitch]="segment">
         <div *ngSwitchCase="'images'">
-            <img *ngFor="let image of images" [cacheSrc]="image"/>
+            <img *ngFor="let image of images" [cacheSrc]="image" (click)="remove(image)"/>
         </div>
 
         <div *ngSwitchCase="'videos'">
-            <video *ngFor="let video of videos" [cacheSrc]="video" controls autoplay></video>
+            <video *ngFor="let video of videos" [cacheSrc]="video" controls autoplay (click)="remove(video)"></video>
         </div>
     </div>
 </ion-content>
