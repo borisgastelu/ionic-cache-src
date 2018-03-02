@@ -2,8 +2,8 @@
 
 Ionic module for caching resources, works for any HTML tag, use storage and filesystem. Uses [Ionic Storage](https://ionicframework.com/docs/storage/) so it supports IndexedDB, SQLite (Cordova), WebSQL
 
-<!--[![NPM](https://nodei.co/npm/ionic-cache-src.png?stars&downloads)](https://nodei.co/npm/ionic-cache-src/)-->
-<!--[![NPM](https://nodei.co/npm-dl/ionic-cache-src.png?months=3&height=1)](https://nodei.co/npm/ionic-cache-src/)-->
+[![NPM](https://nodei.co/npm/ionic-cache-src.png?stars&downloads)](https://nodei.co/npm/ionic-cache-src/)
+[![NPM](https://nodei.co/npm-dl/ionic-cache-src.png?months=3&height=1)](https://nodei.co/npm/ionic-cache-src/)
 
 ## [Basic Usage](#basic-usage)
 
@@ -113,7 +113,7 @@ Make sure to install the following ionic modules and cordova plugins:
 ## Instance Members
 
 ### - cache(url)
-
+If not exists, saves a resource in storage and filesystem, otherwise, returns the saved item.
 Param | Type | Description
 --- | --- | ---
 `url` | string | URL of the server to download the file, as encoded by encodeURI().
@@ -121,7 +121,7 @@ Param | Type | Description
 - Return **Observable<[CacheItem](#cacheitem)>**
 
 ### - cacheAll(urls)
-
+Gets a list of resources and evaluates which of them not exists in storage and filesystem and starts download. Otherwise, returns all the saved items.
 Param | Type | Description
 --- | --- | ---
 `urls` | string[] | List of URLs of the server to download the file, as encoded by encodeURI().
@@ -129,7 +129,7 @@ Param | Type | Description
 - Return **Observable<[CacheItem](#cacheitem)[]>**
 
 ### - find(url)
-
+Returns a value of the first item in storage and filesystem that satisfies the provided url. Otherwise null is returned.
 Param | Type | Description
 --- | --- | ---
 `url` | string | URL of the server to download the file, as encoded by encodeURI().
@@ -137,7 +137,7 @@ Param | Type | Description
 - Return **Observable<[CacheItem](#cacheitem)>**
 
 ### - remove(url)
-
+Removes any item associated with this url. Returns the deleted item with status "deleted".
 Param | Type | Description
 --- | --- | ---
 `url` | string | URL of the server to download the file, as encoded by encodeURI().
@@ -145,6 +145,7 @@ Param | Type | Description
 - Return **Observable<[CacheItem](#cacheitem)>**
 
 ### - clear()
+Clears the entire ionic-cache-src storage and filesystem. Returns a list of items with status 'deleted'.
 - Return **Observable<[CacheItem](#cacheitem)[]>**
 
 ### [_CacheItem_](#cacheitem)
