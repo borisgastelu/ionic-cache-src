@@ -114,6 +114,7 @@ Make sure to install the following ionic modules and cordova plugins:
 
 ### - cache(url)
 If not exists, saves a resource in storage and filesystem, otherwise, returns the saved item.
+
 Param | Type | Description
 --- | --- | ---
 `url` | string | URL of the server to download the file, as encoded by encodeURI().
@@ -122,6 +123,7 @@ Param | Type | Description
 
 ### - cacheAll(urls)
 Gets a list of resources and evaluates which of them not exists in storage and filesystem and starts download. Otherwise, returns all the saved items.
+
 Param | Type | Description
 --- | --- | ---
 `urls` | string[] | List of URLs of the server to download the file, as encoded by encodeURI().
@@ -130,6 +132,7 @@ Param | Type | Description
 
 ### - find(url)
 Returns a value of the first item in storage and filesystem that satisfies the provided url. Otherwise null is returned.
+
 Param | Type | Description
 --- | --- | ---
 `url` | string | URL of the server to download the file, as encoded by encodeURI().
@@ -138,6 +141,7 @@ Param | Type | Description
 
 ### - remove(url)
 Removes any item associated with this url. Returns the deleted item with status "deleted".
+
 Param | Type | Description
 --- | --- | ---
 `url` | string | URL of the server to download the file, as encoded by encodeURI().
