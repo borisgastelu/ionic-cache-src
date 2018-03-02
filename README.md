@@ -1,6 +1,6 @@
 # ionic-cache-src
 
-Ionic module for caching resources, works for any HTML tag, use storage and filesystem.
+Ionic module for caching resources, works for any HTML tag, use storage and filesystem. Uses [Ionic Storage](https://ionicframework.com/docs/storage/) so it support IndexedDB, SQLite (Cordova), WebSQL
 
 ## [Basic Usage](#basic-usage)
 
@@ -20,10 +20,15 @@ Ionic module for caching resources, works for any HTML tag, use storage and file
   ```
 
 ## [Installation](#installation)
-- First you have to install the module through npm:
 
+Via NPM
 ```shell
-$ npm install --save ionic-cache-src
+$ npm install --save ionic-cache-src @ionic/storage --save
+```
+
+or Yarn
+```shell
+$ yarn add ionic-cache-src @ionic/storage
 ```
 
 - Afterwards, you need to import the `IonicCacheSrcModule` in your module:
@@ -31,24 +36,32 @@ $ npm install --save ionic-cache-src
 ```ts
 import { NgModule } from '@angular/core';
 import { IonicStorageModule } from '@ionic/storage';
+import { File } from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
+
 import { IonicCacheSrcModule } from 'ionic-cache-src';
- 
+
 @NgModule({
     imports: [
         ...
         IonicStorageModule.forRoot(),
         IonicCacheSrcModule
+    ],
+    providers: [
+        File,
+        FileTransfer,
+        ...
     ]
 })
 export class YourModule {};
 ```
 
-**Note:** _IonicCacheSrcModule_ depends on `IonicStorageModule` and the following cordova plugins:
+## [Dependencies](#dependencies)
+Make sure to install the following ionic modules and cordova plugins:
 
-```shell
-$ ionic cordova plugin add cordova-plugin-file
-$ ionic cordova plugin add cordova-plugin-file-transfer
-```
+- [IonicStorageModule](https://ionicframework.com/docs/storage/)
+- [File](https://ionicframework.com/docs/native/file/) plugin
+- [FileTransfer](https://ionicframework.com/docs/native/file-transfer/) plugin
 
 ## [Advanced Usage](#advanced-usage)
 
