@@ -2,6 +2,9 @@
 
 Ionic module for caching resources, works for any HTML tag, use storage and filesystem. Uses [Ionic Storage](https://ionicframework.com/docs/storage/) so it support IndexedDB, SQLite (Cordova), WebSQL
 
+<!--[![NPM](https://nodei.co/npm/ionic-cache-src.png?stars&downloads)](https://nodei.co/npm/ionic-cache-src/)-->
+<!--[![NPM](https://nodei.co/npm-dl/ionic-cache-src.png?months=3&height=1)](https://nodei.co/npm/ionic-cache-src/)-->
+
 ## [Basic Usage](#basic-usage)
 
 - As Directive (html)
@@ -21,12 +24,12 @@ Ionic module for caching resources, works for any HTML tag, use storage and file
 
 ## [Installation](#installation)
 
-Via NPM
+[Via NPM](https://www.npmjs.com/package/ionic-cache-src)
 ```shell
 $ npm install --save ionic-cache-src @ionic/storage --save
 ```
 
-or Yarn
+or [Yarn](https://yarnpkg.com/en/package/ionic-cache-src)
 ```shell
 $ yarn add ionic-cache-src @ionic/storage
 ```
@@ -65,7 +68,7 @@ Make sure to install the following ionic modules and cordova plugins:
 
 ## [Advanced Usage](#advanced-usage)
 
-- Your typescript file. Use `get` or `getAll` methods to fetch resources. (Note: Just first time, resource is downloaded and saved in filesystem)
+- Your typescript file. Use `cache` or `cacheAll` methods to fetch resources. (Note: Just first time, resource is downloaded and saved in filesystem)
     
     ```ts
     import { Component } from '@angular/core';
@@ -86,8 +89,8 @@ Make sure to install the following ionic modules and cordova plugins:
                 'http://sample-videos.com/img/Sample-jpg-image-500kb.jpg'
             ];
 
-            // Use get() for one resource
-            this._cacheSrv.getAll(images)
+            // Use cache() for one resource
+            this._cacheSrv.cacheAll(images)
                 .subscribe(cacheItems => {
                     this.paths = cacheItems.map(item => item.path);
                 });
@@ -104,7 +107,7 @@ Make sure to install the following ionic modules and cordova plugins:
 
 ## Instance Members
 
-### - get(url)
+### - cache(url)
 
 Param | Type | Description
 --- | --- | ---
@@ -112,7 +115,7 @@ Param | Type | Description
 
 - Return `Observable<CacheItem>`
 
-### - getAll(urls)
+### - cacheAll(urls)
 
 Param | Type | Description
 --- | --- | ---
