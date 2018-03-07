@@ -107,7 +107,7 @@ Make sure to install the following ionic modules and cordova plugins:
 - Your html file
 
     ```html
-    <img *ngFor="let path of paths" [cacheSrc]="path"/>
+    <img *ngFor="let path of paths" [src]="path"/>
     ```
 
 ## Instance Members
