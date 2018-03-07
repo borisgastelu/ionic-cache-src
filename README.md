@@ -2,8 +2,8 @@
 
 Ionic module for caching resources, works for any HTML tag, use storage and filesystem. Uses [Ionic Storage](https://ionicframework.com/docs/storage/) so it supports IndexedDB, SQLite (Cordova), WebSQL
 
-[![NPM](https://nodei.co/npm/ionic-cache-src.png?stars&downloads)](https://nodei.co/npm/ionic-cache-src/)
-[![NPM](https://nodei.co/npm-dl/ionic-cache-src.png?months=3&height=1)](https://nodei.co/npm/ionic-cache-src/)
+<!-- [![NPM](https://nodei.co/npm/ionic-cache-src.png?stars&downloads)](https://nodei.co/npm/ionic-cache-src/) -->
+<!-- [![NPM](https://nodei.co/npm-dl/ionic-cache-src.png?months=3&height=1)](https://nodei.co/npm/ionic-cache-src/) -->
 
 ## [Basic Usage](#basic-usage)
 
